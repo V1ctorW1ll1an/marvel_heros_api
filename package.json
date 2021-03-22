@@ -11,6 +11,7 @@
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
+    "start:dev:db": "./src/scripts/start_db.sh",
     "start:devNodemon": "nodemon --config nodemon.json",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
@@ -20,7 +21,8 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "release": "standard-version"
+    "release": "standard-version",
+    "create:migration": "typeorm migration:create -n"
   },
   "dependencies": {
     "@nestjs/common": "^7.6.13",
